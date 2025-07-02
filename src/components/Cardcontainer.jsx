@@ -136,7 +136,7 @@ const Cardcontainer = () => {
         </button>
 
 
-            <div  ref = {scrollRef} className="overflow-hidden whitespace-nowrap flex gap-6 w-[1280px] container mx-auto ">
+            <div  ref = {scrollRef} className="overflow-hidden whitespace-nowrap flex gap-6 w-[1200px] container mx-auto ">
             {
                 imageData.map((info, index) => (
                 <div key={info?.id} className="inline-block">
@@ -152,7 +152,7 @@ const Cardcontainer = () => {
       </div>
       </div>
 
-         { filteredData && <div className="p-3 grid grid-cols-4 container mx-auto max-w-[1150px] gap-15"> 
+         { filteredData && <div className="p-3 grid grid-cols-4 container mx-auto max-w-[1200px] gap-15"> 
         {filteredData.map((restaurant,index) => {
             return (
                 <Restaurantcard
