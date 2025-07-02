@@ -1,3 +1,4 @@
 
-export const img_ccd ="https://i.pinimg.com/736x/07/cb/bc/07cbbc30f02742b504a72545594c852e.jpg"
-export const IMG_mcd = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/5/22/7d75687b-e820-4d04-95c7-010ae56cb94a_32399.JPG"
+export const API_URL ="https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
+export const FILTERS_URL = "https://media-assets.swiggy.com/swiggy/image/upload/"
