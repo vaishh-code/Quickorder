@@ -129,7 +129,6 @@ const Cardcontainer = () => {
                 <input type="text"  onChange={(e) => setSearchText(e.target.value.toLowerCase().trim())} className=" w-full max-w-[400px] bg-gray-200 border border-gray-300 hover:border-black rounded-xl p-1 mx-3" placeholder=" Enter name of the restaurant"/>
                 <button onClick={handleSearch} className="p-2 rounded-3xl bg-gray-200 mx-2"> 🔍 </button>
             </div>
-
             <div className="relative container mx-auto">
         <button onClick={() => scroll("left")} className="absolute left-11/12 transform -translate-y-1/2 bg-white p-2 shadow rounded-full ">
           ⬅️

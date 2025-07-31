@@ -1,6 +1,7 @@
 import { FILTERS_URL, IMG_URL } from "../constants"
+import { Link } from "react-router"
 
-const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryImageId, text, imageId}) => {  
+const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryImageId, text, imageId,id}) => {  
     return(
         <>
 
@@ -12,7 +13,7 @@ const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryIma
                 <h4 className="mt-2 text-sm font-medium">{text}</h4>
            </div>
         )}
-
+        <Link to={`/restaurant/${name}`}>
         {cloudinaryImageId && (
              <div className="w-full">
             <div className="w-full overflow-hidden"> 
@@ -28,6 +29,7 @@ const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryIma
                 <p>{locality}</p>
             </div>
         </div>)}
+        </Link>
         </>
     )
 }
