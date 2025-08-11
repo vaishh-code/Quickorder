@@ -1,7 +1,7 @@
 import { FILTERS_URL, IMG_URL } from "../constants"
 import { Link } from "react-router"
 
-const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryImageId, text, imageId,id}) => {  
+const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryImageId, text, imageId,id, costForTwo}) => {  
     return(
         <>
 
@@ -13,20 +13,22 @@ const Restaurantcard = ({name, avgRating, sla, cuisines, locality, cloudinaryIma
                 <h4 className="mt-2 text-sm font-medium">{text}</h4>
            </div>
         )}
-        <Link to={`/restaurant/${name}`}>
+
+        <Link to={`/restaurant/${name}-rest${id}`}>
         {cloudinaryImageId && (
-             <div className="w-full">
+             <div className="w-full shadow-xl rounded-2xl">
             <div className="w-full overflow-hidden"> 
                 <img className="w-full h-50 object-cover rounded-2xl" src={`${IMG_URL+cloudinaryImageId}`} alt="" />
             </div>
-            <div>
-                <h3 className="font-bold text-xl">{name}</h3>
+            <div className="p-2">
+                <h3 className="font-bold text-xl truncate">{name}</h3>
                 <div className="flex gap-4 font-medium text-md">
                     <p>{avgRating}</p>
                     <p>{sla?.slaString}</p>
                 </div>
-                <p>{cuisines}</p>
-                <p>{locality}</p>
+                <p className="truncate">{cuisines}</p>
+                <p className="truncate">{locality}</p>
+                {costForTwo && <p className="truncate">{costForTwo}</p>}
             </div>
         </div>)}
         </Link>

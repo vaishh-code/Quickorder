@@ -1,6 +1,7 @@
 import Restaurantcard from "./Restaurantcard"
 import { useState, useEffect, useRef} from "react";
 import { API_URL } from "../constants";
+import Shimmer from "./shimmer";
 
 const Cardcontainer = () => {
     // const [count, setcount]= useState(1)
@@ -9,6 +10,7 @@ const Cardcontainer = () => {
     const [filteredData, setFilteredData] = useState([])
     const [imageData, setImageData] = useState([])
     const scrollRef = useRef(null)
+    const [isloading, setIsLoading] = useState(true)
 
     const scroll = (direction) =>{
         if(scrollRef.current){
@@ -97,6 +99,9 @@ const Cardcontainer = () => {
         catch(err){
             console.log("err",err)
         }
+        finally{
+            setIsLoading(false)
+        }
     }
 
     const carousalData = async() =>{
@@ -122,6 +127,17 @@ const Cardcontainer = () => {
     useEffect(()=>{
         getData(), carousalData()
     }, []);
+
+
+    if(isloading){
+        return(
+            <div className="p-3 grid grid-cols-4 container mx-auto max-w-[1200px] gap-15">
+                {new Array(20).fill(0).map((item,index)=>{
+                    return <Shimmer key={index}/>
+                })}
+            </div>
+        )
+    }
 
     return(
         <>
